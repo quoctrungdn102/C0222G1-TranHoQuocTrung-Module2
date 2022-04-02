@@ -1,4 +1,4 @@
 package Array_method.practice;
 
-public class XoaPhanTu {
+public class SinhVien {
 }
