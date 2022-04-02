@@ -7,9 +7,18 @@ public class SumCheo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter row");
-        int row = scanner.nextInt();
-        int column = row;
-        int[][]arr = new int[row][column];
+        int row;
+        while (true){
+            row = scanner.nextInt();
+            if (row<2){
+                System.out.println("row >= 2");
+            }else {
+                break;
+            }
+        }
+
+
+        int[][]arr = new int[row][row];
         System.out.println("arr co "+(row*row)+"phan tu ");
         System.out.println("nhap phan tu trong arr");
         int count = 1;
