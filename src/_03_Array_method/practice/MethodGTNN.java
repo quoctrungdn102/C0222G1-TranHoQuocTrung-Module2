@@ -1,6 +1,4 @@
-package Array_method.practice;
-
-import java.util.Arrays;
+package _03_Array_method.practice;
 
 public class MethodGTNN {
     public static void main(String[] args) {

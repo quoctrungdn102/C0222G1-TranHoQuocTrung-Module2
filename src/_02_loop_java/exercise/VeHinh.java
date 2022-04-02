@@ -6,7 +6,7 @@ public class VeHinh {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int chose = -1;
+        int chose = 1;
         while (chose !=4){
             System.out.println("chose 1 2 3 4");
             System.out.println("1.print the rectangle");
@@ -49,6 +49,7 @@ public class VeHinh {
                     break;
                 case 4:
                     System.out.println("bye bye");
+                    break;
                 default:
                     System.out.println("chose 1 2 3 4 ");
 

@@ -1,4 +1,4 @@
-package Array_method.exercise;
+package _03_Array_method.exercise;
 
 import java.util.Arrays;
 import java.util.Scanner;
