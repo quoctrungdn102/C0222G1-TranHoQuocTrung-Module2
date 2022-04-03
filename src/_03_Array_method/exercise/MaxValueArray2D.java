@@ -3,7 +3,7 @@ package _03_Array_method.exercise;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class GTLNMangHaiChieu {
+public class MaxValueArray2D {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter row");
@@ -22,17 +22,17 @@ public class GTLNMangHaiChieu {
 
         }
         System.out.println(Arrays.deepToString(arr));
-        int index = 0;
-        int index1 = 0;
+        int rowMax = 0;
+        int columnMax = 0;
         for (int i = 0; i <arr.length ; i++) {
             for (int j = 0; j <arr[i].length ; j++) {
-               if (arr[i][j]>arr[index][index1]){
-                   index = i;
-                   index1 =j;
+               if (arr[i][j]>arr[rowMax][columnMax]){
+                   rowMax = i;
+                   columnMax =j;
                }
 
             }
         }
-        System.out.println("max:"+arr[index][index1]);
+        System.out.println("max:"+arr[rowMax][columnMax]);
     }
 }

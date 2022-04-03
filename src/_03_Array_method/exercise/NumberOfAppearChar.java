@@ -2,7 +2,7 @@ package _03_Array_method.exercise;
 
 import java.util.Scanner;
 
-public class StringSoLanXuatHienKyTu {
+public class NumberOfAppearChar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhap 1 chuoi ");

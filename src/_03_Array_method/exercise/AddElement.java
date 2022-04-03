@@ -3,7 +3,7 @@ package _03_Array_method.exercise;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class ChenPhanTu {
+public class AddElement {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 0, 0};//8
         System.out.println("nhap so can chen");

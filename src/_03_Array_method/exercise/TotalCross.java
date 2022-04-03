@@ -3,7 +3,7 @@ package _03_Array_method.exercise;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class SumCheo {
+public class TotalCross {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter row");

@@ -3,7 +3,7 @@ package _03_Array_method.exercise;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class GTNNArray {
+public class MiniValueArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[]arr = new int[8];

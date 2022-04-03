@@ -3,7 +3,7 @@ package _03_Array_method.exercise;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class GopMang {
+public class MergeArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] arr1 = new int[4];
@@ -20,7 +20,7 @@ public class GopMang {
         }
         System.out.println(Arrays.toString(arr2));
 
-        int[] arr3 = new int[9];
+        int[] arr3 = new int[arr1.length+arr2.length];
         for (int i = 0; i < arr1.length; i++) {
             arr3[i] = arr1[i];
         }
