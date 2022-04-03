@@ -2,7 +2,7 @@ package _02_loop_java.exercise;
 
 import java.util.Scanner;
 
-public class _20_SoNguyenTo {
+public class _20PrimeNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhap so luong so nguyen to can hien thi ");

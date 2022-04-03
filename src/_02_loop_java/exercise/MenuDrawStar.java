@@ -2,7 +2,7 @@ package _02_loop_java.exercise;
 
 import java.util.Scanner;
 
-public class VeHinh {
+public class MenuDrawStar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
