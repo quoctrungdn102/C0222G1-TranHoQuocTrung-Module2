@@ -33,12 +33,16 @@ public class DeleteElement {
             }
         }
         System.out.println(index);
+        System.out.println(Arrays.toString(arr(arr,index)));
+
+    }
+    public static int[]arr(int arr[],int index){
         for (int i = index; i < arr.length - 1; i++) {
             arr[i] = arr[i + 1];
 
         }
         arr[arr.length - 1] = 0;
-        System.out.println(Arrays.toString(arr));
+       return arr;
     }
 
     // 7, 8, 9, 4, 4

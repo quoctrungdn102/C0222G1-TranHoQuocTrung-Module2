@@ -12,31 +12,42 @@ public class TotalColumn {
         System.out.println("enter column");
         int column = scanner.nextInt();
 
-        int[][]arr = new int[row][column];
-        for (int i = 0; i < arr.length ; i++) {
-            System.out.println("enter element row"+(i+1));
-            for (int j = 0; j <arr[i].length ; j++) {
-                arr[i][j]=scanner.nextInt();
-            }
-        }
+        int[][] arr = new int[row][column];
+        inputElement(arr, scanner);
         System.out.println(Arrays.deepToString(arr));
         int index;
-        while (true){
+        while (true) {
             System.out.println("enter the  column you want to sum  ");
             index = scanner.nextInt();
-            if(index > column||index<=0){
+            if (index > column || index <= 0) {
                 System.out.println("column false");
-            }else {
+            } else {
                 break;
             }
         }
+        System.out.println("sum column "+index+ "="+sumColumn(arr,index));
 
-        int sum = 0;
-        for (int i = 0; i <arr.length ; i++) {
-            sum+= arr[i][index-1];
-            }
-        System.out.println("sum is column"+index+"="+sum);
-        }
+
     }
+
+    public static void inputElement(int[][] arr, Scanner scanner) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("enter element row" + (i + 1));
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = scanner.nextInt();
+            }
+        }
+
+    }
+
+    public static int sumColumn(int[][] arr, int index) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i][index - 1];
+        }
+        return sum;
+    }
+
+}
 
 

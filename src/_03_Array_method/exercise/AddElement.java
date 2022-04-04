@@ -9,22 +9,29 @@ public class AddElement {
         System.out.println("nhap so can chen");
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        int index;
+        int index = 0;
+        index = inputIndex(index,scanner,arr);
+        System.out.println(Arrays.toString(deleteElement(arr,index,x)));
+
+
+    }
+    public static int[] deleteElement(int[] arr, int index, int x){
+        for (int i = arr.length - 1; i > index; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[index] = x;
+        return arr;
+    }
+    public static int inputIndex(int index,Scanner scanner,int[]arr){
+
         while (true) {
             System.out.println("nhap vi tri can chen");
             index = scanner.nextInt();
             if (index <= -1 || index >= arr.length) {
                 System.out.println("nhap lai ");
             } else {
-                break;
+                return index;
             }
         }
-        for (int i = arr.length - 1; i > index; i--) {
-            arr[i] = arr[i - 1];
-        }
-        arr[index] = x;
-        System.out.println(Arrays.toString(arr));
-
     }
-
 }

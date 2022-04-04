@@ -20,6 +20,7 @@ public class MergeArray {
         }
         System.out.println(Arrays.toString(arr2));
 
+
         int[] arr3 = new int[arr1.length+arr2.length];
         for (int i = 0; i < arr1.length; i++) {
             arr3[i] = arr1[i];
@@ -30,4 +31,5 @@ public class MergeArray {
         System.out.println("gop 2 mang ");
         System.out.println(Arrays.toString(arr3));
     }
+
 }

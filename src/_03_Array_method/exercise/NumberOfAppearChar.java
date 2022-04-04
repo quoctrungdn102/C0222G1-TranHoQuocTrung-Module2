@@ -17,6 +17,9 @@ public class NumberOfAppearChar {
                 break;
             }
         }
+        demKytu(str1,str2);
+
+    }public static void demKytu(String str1,String str2){
         int count = 0;
         for (int i = 0; i <str1.length() ; i++) {
             if(str2.charAt(0)==str1.charAt(i)){
