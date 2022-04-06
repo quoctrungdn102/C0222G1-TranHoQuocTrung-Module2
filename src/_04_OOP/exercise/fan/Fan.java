@@ -15,7 +15,13 @@ public class Fan {
     }
 
     public void setSpeed(int speed) {
-        this.speed = speed;
+        if (speed == 1) {
+            this.speed = SLOW;
+        }else if (speed==2){
+            this.speed=MEDIUM;
+        }else if (speed==3){
+            this.speed=FAST;
+        }
     }
 
     public boolean isOn() {
