@@ -1,6 +1,4 @@
-package _04_OOP.exercise;
-
-import java.util.Scanner;
+package _04_OOP.exercise.quadratic_equation;
 
 public class QuadraticEquation {
 private double a,b,c;
@@ -50,26 +48,6 @@ private double a,b,c;
         return " The equation has no roots";
     }
 
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("enter a");
-        double a = scanner.nextDouble();
-        System.out.print("enter b");
-        double b = scanner.nextDouble();
-        System.out.print("enter c");
-        double c = scanner.nextDouble();
-        QuadraticEquation quadraticEquation1 = new QuadraticEquation(a,b,c);
-
-      if(quadraticEquation1.getDiscriminant()>0){
-          System.out.println("x1 = "+quadraticEquation1.getRoot1());
-          System.out.println("x2 = "+quadraticEquation1.getRoot2());
-      }else if((quadraticEquation1.getDiscriminant()==0)){
-            System.out.println("x1=x2 = "+quadraticEquation1.getRoot1());
-      }else {
-          System.out.println(quadraticEquation1.display());
-      }
-    }
 
 }
 

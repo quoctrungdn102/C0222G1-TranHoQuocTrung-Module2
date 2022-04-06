@@ -1,45 +1,6 @@
-package _04_OOP.exercise;
+package _04_OOP.exercise.stop_watch;
 
-import java.util.Arrays;
-import java.util.Date;
-
-public class StopWatch {
-
-    private long startTime, endTime;
-
-    public StopWatch() {
-        this.startTime = System.currentTimeMillis();
-//        this.endTime = System.currentTimeMillis();
-    }
-
-    public void setStartTime(long startTime) {
-        this.startTime = startTime;
-    }
-
-    public long getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(long endTime) {
-        this.endTime = endTime;
-    }
-
-
-    public long start() {
-        return this.startTime;
-    }
-
-    public long sTop() {
-        return System.currentTimeMillis();
-    }
-
-    public long getElapsedTime() {
-        return (this.sTop() - this.startTime);
-    }
-
-
-
-
+public class StopWatchText {
     public static void main(String[] args) {
         int[] arr = new int[100000];
 
@@ -52,10 +13,11 @@ public class StopWatch {
 
 
 //        long start = stopWatch.start();
+
         stopWatch.start();
         sort(arr);
-
         stopWatch.sTop();
+
 //        long stop = stopWatch.sTop();
 //        System.out.println( stop -start);
 
@@ -75,6 +37,5 @@ public class StopWatch {
 
         }
     }
+
 }
-//989
-//9

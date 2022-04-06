@@ -1,6 +1,9 @@
-package _04_OOP.exercise;
+package _04_OOP.exercise.fan;
 
 public class Fan {
+    private final int SLOW  =1;
+    private final int MEDIUM=2;
+    private final int FAST = 3;
     private int speed;
     private boolean on;
     private double radius;
@@ -8,6 +11,7 @@ public class Fan {
 
     public int getSpeed() {
         return speed;
+
     }
 
     public void setSpeed(int speed) {
@@ -39,7 +43,7 @@ public class Fan {
     }
 
     public Fan() {
-        this.speed = 1;
+        this.speed = SLOW;
         this.on = false;
         this.radius = 5;
         this.color = "blue";
@@ -50,8 +54,14 @@ public class Fan {
         this.radius=radius;
         this.color = color;
     }
+
     public String toString(){
-        return "";
+        if(this.isOn()){
+            return "speed: "+this.speed +" color: " + this.color+" radius: "+ this.radius + " fan is on";
+        }else {
+            return " color: " + this.color+" radius: "+ this.radius  + " fan is off";
+        }
+
     }
 
 }
