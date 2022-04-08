@@ -1,17 +1,33 @@
 package _07_abstract_interface.exercise.resizeable;
 
-public class Square implements Resizeable {
+public class Square extends Shape implements Resizeable {
     private double side;
 
-    public Square() {
+
+
+    public Square(String color, double side) {
+        super(color);
+        this.side = side;
     }
 
-    public Square(double side) {
+    public double getSide() {
+        return side;
+    }
+
+    public void setSide(double side) {
         this.side = side;
     }
 
     @Override
-    public void resize(double percent) {
+    public double getArea() {
+        return Math.pow(this.getSide(),2);
+    }
 
+
+
+    @Override
+    public void resize(double percent) {
+double side = this.side+this.getSide()*percent/100;
+setSide(side);
     }
 }
