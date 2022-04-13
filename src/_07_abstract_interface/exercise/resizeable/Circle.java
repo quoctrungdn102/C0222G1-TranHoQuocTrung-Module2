@@ -1,6 +1,6 @@
 package _07_abstract_interface.exercise.resizeable;
 
-public class Circle extends Shape implements Resizeable {
+public class Circle extends Shape  {
     private double radius;
 
 
