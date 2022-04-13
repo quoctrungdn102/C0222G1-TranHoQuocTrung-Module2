@@ -13,10 +13,8 @@ public class Test {
             System.out.println("Area before " + arr[i].getArea());
         }
         System.out.println(" ");
-        ((Circle) arr[0]).resize(random);
-        ((Rectangle) arr[1]).resize(random);
-        ((Square) arr[2]).resize(random);
         for (int i = 0; i < arr.length; i++) {
+            arr[i].resize(random);
             System.out.println("Area after " + arr[i].getArea());
         }
     }
