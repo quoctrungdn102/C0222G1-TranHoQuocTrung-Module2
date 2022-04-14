@@ -1,6 +1,6 @@
-package _10_array_list.excercise;
+package _10_array_list.excercise.array_list;
 
-import java.util.ArrayList;
+import _10_array_list.excercise.array_list.MyList;
 
 public class TestMyList {
     public static class Student {

@@ -1,6 +1,5 @@
-package _10_array_list.excercise;
+package _10_array_list.excercise.array_list;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyList<E> {
