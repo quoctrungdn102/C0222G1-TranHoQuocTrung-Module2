@@ -21,7 +21,7 @@ public class OccurrencesOfTheWord {
             System.out.println(entry.getKey() + " xuất hiện : " + entry.getValue()+"lan");
         }
     }
- 
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
