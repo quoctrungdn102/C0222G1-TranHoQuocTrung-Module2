@@ -2,15 +2,15 @@ package _11_stack_queue.exercise.queue;
 
 import java.util.Comparator;
 
-public class Person {
+public class Personnel {
     private String name;
     private boolean gender;
     private int birthday;
 
-    public Person() {
+    public Personnel() {
     }
 
-    public Person(String name, boolean gender, int birthday) {
+    public Personnel(String name, boolean gender, int birthday) {
         this.name = name;
         this.gender = gender;
         this.birthday = birthday;
