@@ -17,7 +17,7 @@ public class ManagerPersonnel {
         list.add(person2);
         list.add(person3);
         list.add(person4);
-        Collections.sort(list,new PersonComparator());
+        Collections.sort(list,new PersonnelComparator());
 
 
         for (Personnel value : list) {

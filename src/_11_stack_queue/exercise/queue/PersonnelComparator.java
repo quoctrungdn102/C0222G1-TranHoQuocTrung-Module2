@@ -2,7 +2,7 @@ package _11_stack_queue.exercise.queue;
 
 import java.util.Comparator;
 
-public class PersonComparator implements Comparator<Personnel> {
+public class PersonnelComparator implements Comparator<Personnel> {
 
     @Override
     public int compare(Personnel o1, Personnel o2) {
