@@ -9,7 +9,7 @@ public class Test {
         Scanner scanner = new Scanner(System.in);
         List<Product> list = new ArrayList<>();
         ProductManager productManager = new ProductManager();
-        Product product = new Product("xa phong", 20000);
+        Product product = new Product("xa phong", 30000);
         Product product1 = new Product("dau goi", 25000);
         list.add(product);
         list.add(product1);

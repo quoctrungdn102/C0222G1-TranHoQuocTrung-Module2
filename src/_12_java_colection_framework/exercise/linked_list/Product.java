@@ -1,8 +1,6 @@
-package _12_java_colection_framework.exercise.array_list;
+package _12_java_colection_framework.exercise.linked_list;
 
-import c_r_u_d.add_ex.Student;
-
-public class Product  implements Comparable<Product> {
+public class Product {
     private String name;
     private double gia;
 
@@ -34,16 +32,8 @@ public class Product  implements Comparable<Product> {
     @Override
     public String toString() {
         return "Product{" +
-                  name  +
+                name  +
                 "// gia = " + gia +"vnd"+
                 '}';
-    }
-
-
-
-
-    @Override
-    public int compareTo(Product o) {
-        return this.name.compareTo(o.getName());
     }
 }

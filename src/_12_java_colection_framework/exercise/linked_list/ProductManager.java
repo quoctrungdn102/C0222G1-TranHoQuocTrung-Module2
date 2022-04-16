@@ -1,14 +1,15 @@
-package _12_java_colection_framework.exercise.array_list;
+package _12_java_colection_framework.exercise.linked_list;
 
 
-import c_r_u_d.add_ex.Person;
+
+
+
 
 import java.util.*;
 
-import _12_java_colection_framework.exercise.array_list.Product;
 
 public class ProductManager {
-    Scanner scanner = new Scanner(System.in);
+  Scanner scanner1 = new Scanner(System.in);
 
 //    static List<Product> list = new ArrayList<>();
 
@@ -23,10 +24,10 @@ public class ProductManager {
 
     public void addProduct(List<Product> list) {
 
-        System.out.println("nhap tem san pham ");
-        String name = scanner.nextLine();
+        System.out.println("nhap loai thuoc ");
+        String name = scanner1.nextLine();
         System.out.println("nhap gia ");
-        double gia = Double.parseDouble(scanner.nextLine());
+        double gia = Double.parseDouble(scanner1.nextLine());
         Product product = new Product(name, gia);
 
         list.add(product);
@@ -34,35 +35,33 @@ public class ProductManager {
 
     }
 
-    public void editById(List<Product> list) {
-        System.out.println("nhap san phan muon  sữa");
-        String id = scanner.nextLine();
-
-
+    public void editById(LinkedList<Product> list) {
+        System.out.println("nhap san pham thay doi");
+        String name = scanner1.nextLine();
         for (Product temp : list) {
-            if (temp.getName().equals(id)) {
+            if (temp.getName().equals(name)) {
                 System.out.println("nhap san pham moi");
-                temp.setName(scanner.nextLine());
+                temp.setName(scanner1.nextLine());
                 System.out.println("nhap gia moi");
-                temp.setGia(Double.parseDouble(scanner.nextLine()));
+                temp.setGia(Double.parseDouble(scanner1.nextLine()));
             } else {
                 break;
             }
         }
     }
-    public void removeProduct(List<Product>list){
+    public void removeProduct(LinkedList<Product>list){
         System.out.println("nhap san pham ban muon xoa ");
-        String index =scanner.nextLine();
+        String index =scanner1.nextLine();
         for (Product arr1: list) {
             if (arr1.getName().equals(index)){
-                list.remove(arr1);
+                list.remove();
             }
         }
         showList(list);
     }
-    public void search(List<Product>list){
+    public void search(LinkedList<Product>list){
         System.out.println("nhap san phan muon tim kiem ");
-        String index = scanner.nextLine();
+        String index = scanner1.nextLine();
         for (Product arr:list) {
             if(arr.getName().equals(index)){
                 System.out.println(arr);
@@ -70,11 +69,14 @@ public class ProductManager {
 
         }
     }
-    public  void sort(List<Product>list){
-        Collections.sort(list,new ProductCompara());
+    public  void sort(LinkedList<Product>list){
+        Collections.sort(list, new Comparator<Product>() {
+            @Override
+            public int compare(Product o1, Product o2) {
+                return (int) (o1.getGia()-o2.getGia());
+            }
+        });
 //        Collections.sort(list);
-////        showList(list);
+//        showList(list);
     }
-
-
 }
