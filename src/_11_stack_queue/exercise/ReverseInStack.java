@@ -22,19 +22,23 @@ public class ReverseInStack {
         }
         System.out.println(Arrays.toString(arr));
 
+
+        // đảo ngược chuỗi
         Stack<String> wStack = new Stack<>();
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("nhap chuoi ");
         String mWork = scanner.nextLine();
         String[] chart = mWork.split("");
 
         for (int i = 0; i < chart.length; i++) {
-            wStack.push(chart[i]);
+            if(!chart[i].equals(" ")){
+                wStack.push(chart[i]);
+            }
+
         }
-        String[] arr1 = new String[chart.length];
+        String[] arr1 = new String[wStack.size()];
         System.out.println(wStack);
-        for (int i = 0; i < chart.length; i++) {
+        for (int i = 0; i < arr1.length; i++) {
             arr1[i] = wStack.pop();
         }
         System.out.println(Arrays.toString(arr1));
