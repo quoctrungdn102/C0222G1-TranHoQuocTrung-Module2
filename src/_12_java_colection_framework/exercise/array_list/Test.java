@@ -14,14 +14,16 @@ public class Test {
         list.add(product);
         list.add(product1);
         int chose = -1;
-        while (chose!=6){
+        while (chose!=8){
             System.out.println("menu");
             System.out.println("1.show list");
             System.out.println("2 add product");
             System.out.println("3 delete product");
             System.out.println("4 search product");
-            System.out.println("5 sắp xếp lại ");
-            System.out.println("6 Exit");
+            System.out.println("5 sắp xếp tăng dần  ");
+            System.out.println("6.sắp xếp giảm dần ");
+            System.out.println("7 edit product");
+            System.out.println("8 Exit");
             chose = Integer.parseInt(scanner.nextLine());
             switch (chose){
                 case 1:
@@ -33,16 +35,24 @@ public class Test {
                     break;
                 case 3:
                     productManager.removeProduct(list);
-                    productManager.showList(list);
+
                     break;
                 case 4:
-                    productManager.search(list);
+                    System.out.println(productManager.search(list));
                     break;
                 case 5:
                     productManager.sort(list);
                     productManager.showList(list);
                     break;
                 case 6:
+                    productManager.sort1(list);
+                    productManager.showList(list);
+                    break;
+                case 7:
+                    productManager.editById(list);
+                    productManager.showList(list);
+                    break;
+                case 8:
                     System.out.println("bye bye");
 
             }

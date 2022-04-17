@@ -35,45 +35,55 @@ public class ProductManager {
     }
 
     public void editById(List<Product> list) {
-        System.out.println("nhap san phan muon  sữa");
-        String id = scanner.nextLine();
 
-
-        for (Product temp : list) {
-            if (temp.getName().equals(id)) {
+        while (true) {
+            System.out.println("nhap id san phan muon  sữa");
+            int id = Integer.parseInt(scanner.nextLine());
+            if (id < list.size()) {
                 System.out.println("nhap san pham moi");
-                temp.setName(scanner.nextLine());
+                list.get(id).setName(scanner.nextLine());
                 System.out.println("nhap gia moi");
-                temp.setGia(Double.parseDouble(scanner.nextLine()));
-            } else {
+                list.get(id).setGia((scanner.nextDouble()));
                 break;
+            } else {
+                System.out.println("id out size list");
+
             }
         }
+
     }
-    public void removeProduct(List<Product>list){
-        System.out.println("nhap san pham ban muon xoa ");
-        String index =scanner.nextLine();
-        for (Product arr1: list) {
-            if (arr1.getName().equals(index)){
-                list.remove(arr1);
+
+    public void removeProduct(List<Product> list) {
+        System.out.println("nhap id san pham ban muon xoa ");
+        int id = Integer.parseInt(scanner.nextLine());
+        if (id < list.size()) {
+            list.remove(id);
+            showList(list);
+                }else {
+            System.out.println("id not correct");
             }
         }
-        showList(list);
-    }
-    public void search(List<Product>list){
+
+    public boolean search(List<Product> list) {
         System.out.println("nhap san phan muon tim kiem ");
         String index = scanner.nextLine();
-        for (Product arr:list) {
-            if(arr.getName().equals(index)){
-                System.out.println(arr);
+        for (Product arr : list) {
+            if(index.contains(arr.getName())){
+                return true;
             }
-
-        }
+        }return false;
     }
-    public  void sort(List<Product>list){
-        Collections.sort(list,new ProductCompara());
-//        Collections.sort(list);
-////        showList(list);
+
+    public void sort(List<Product> list) {
+        Collections.sort(list, new ProductCompara());
+    }
+    public void sort1(List<Product>list){
+        Collections.sort(list, new Comparator<Product>() {
+            @Override
+            public int compare(Product o1, Product o2) {
+                return (int) (o2.getGia()-o1.getGia());
+            }
+        });
     }
 
 

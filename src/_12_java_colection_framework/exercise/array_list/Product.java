@@ -2,14 +2,14 @@ package _12_java_colection_framework.exercise.array_list;
 
 import c_r_u_d.add_ex.Student;
 
-public class Product  implements Comparable<Product> {
+public class Product implements Comparable<Product> {
     private String name;
     private double gia;
 
     public Product() {
     }
 
-    public Product( String name, double gia) {
+    public Product(String name, double gia) {
         this.name = name;
         this.gia = gia;
     }
@@ -34,12 +34,10 @@ public class Product  implements Comparable<Product> {
     @Override
     public String toString() {
         return "Product{" +
-                  name  +
-                "// gia = " + gia +"vnd"+
+                name +
+                "// gia = " + gia + "vnd" +
                 '}';
     }
-
-
 
 
     @Override
