@@ -8,14 +8,14 @@ public class InsertionSort {
         for (int i = 1; i <arr.length ; i++) {
             int tempt = arr[i];
             int index = i;
-            System.out.println(Arrays.toString(arr));
+
             while (index>0&& tempt< arr[index-1]){
                 arr[index]= arr[index-1] ;
 
                 index--;
             }
              arr[index]=tempt;
-
+            System.out.println(Arrays.toString(arr));
         }
 
     }
