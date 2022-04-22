@@ -1,6 +1,8 @@
 package _16_io_file.exercise.read_file;
 
-public class Country {
+import _07_abstract_interface.exercise.resizeable.Resizeable;
+
+public class Country  {
     private int id;
     private String code;
     private String name;
@@ -40,8 +42,8 @@ public class Country {
 
     @Override
     public String toString() {
-        return  + id +","+
-                 code +","+
+        return +id + "," +
+                code + "," +
                 name
                 ;
     }
