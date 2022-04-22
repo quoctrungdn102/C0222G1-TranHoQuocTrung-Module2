@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
-        Boolean flash = true;
+        boolean flash = true;
         do {
             try {
                 Scanner scanner = new Scanner(System.in);
