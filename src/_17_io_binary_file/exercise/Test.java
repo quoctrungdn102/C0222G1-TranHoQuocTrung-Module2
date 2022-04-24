@@ -18,13 +18,13 @@ public class Test {
             chose = Integer.parseInt(scanner.nextLine());
             switch (chose) {
                 case 1:
-                    productControl.showList("_16_io_file.exercise.binary_file\\list.txt");
+                    productControl.showList("_17_io_binary_file\\exercise\\list.txt");
                     break;
                 case 2:
-                    productControl.addProduct(productControl.list, "_16_io_file.exercise.binary_file\\list.txt");
+                    productControl.addProduct(productControl.list, "_17_io_binary_file\\exercise\\list.txt");
                     break;
                 case 3:
-                    System.out.println( productControl.searchProduct("_16_io_file.exercise.binary_file\\list.txt"));
+                    System.out.println( productControl.searchProduct("_17_io_binary_file\\exercise\\list.txt"));
                     break;
                 case 4:
                     System.exit(0);

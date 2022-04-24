@@ -27,15 +27,16 @@ public class ProductControl {
         Product product = new Product(id, name, hang, gia);
 
 
-        list = readFile(path);
+//        list = readFile(path);
         list.add(product);
         writeToFile(path, list);
 
     }
 
     private  boolean isSameID(int id) {
+        list = readFile("_17_io_binary_file\\exercise\\list.txt");
         for (int i = 0; i < list.size(); i++) {
-            if (id == list.get(i).getId()) {
+            if ((int)id == list.get(i).getId()) {
                 return true;
             }
         }
