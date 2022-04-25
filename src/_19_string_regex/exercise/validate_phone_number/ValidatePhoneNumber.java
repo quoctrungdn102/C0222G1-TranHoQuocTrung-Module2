@@ -6,7 +6,7 @@ public class ValidatePhoneNumber {
     }
 
 
-    private static final String PHONE_NUMBER_REGEX = "^(84)(-)(0)[0-9]{9}$";
+    private static final String PHONE_NUMBER_REGEX = "^[(](84)[)](-)[(](0)[0-9]{9}[)]$";
     public static boolean validate(String regex){
         Pattern pattern = Pattern.compile(PHONE_NUMBER_REGEX);
         Matcher matcher = pattern.matcher(regex);
