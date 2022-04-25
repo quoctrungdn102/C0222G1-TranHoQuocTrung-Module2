@@ -11,6 +11,7 @@ public class ProductControl {
 
     public  void addProduct(List<Product> list, String path) {
         list = readFile(path);
+//        int id = list.size()+1;
         int id;
         do {
             System.out.println("nhap id !id list  ");
@@ -70,32 +71,13 @@ public class ProductControl {
             e.printStackTrace();
         }
         return list;
-
     }
-
-    public static void showList(String path) {
-        List<Product> list = new ArrayList<>();
-        try {
-            FileInputStream fileInputStream = new FileInputStream(path);
-            ObjectInputStream objectOutputStream = new ObjectInputStream(fileInputStream);
-            list = (List<Product>) objectOutputStream.readObject();
-            fileInputStream.close();
-            objectOutputStream.close();
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        for (Product arr : list) {
-            System.out.println(arr);
-        }
-
-    }
-
     public  Product searchProduct(String path) {
         List<Product> list = readFile(path);
-        System.out.println("Enter id produc search");
-        int id = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter name product search");
+        String name = (scanner.nextLine());
         for (Product arr : list) {
-            if (arr.getId() == id) {
+            if (arr.getName().contains(name)) {
                 return arr;
             }
         }
