@@ -1,4 +1,4 @@
 package case_study.models;
 
-public class Contrac {
+public class Contract{
 }
