@@ -16,7 +16,7 @@ public class RegexData {
             if (temp.matches(regex)) {
                 check = false;
             } else {
-                System.out.println(error);
+                System.err.println(error);
                 temp = scanner.nextLine();
             }
         } while (check);
@@ -44,4 +44,9 @@ public class RegexData {
             }
         }
     }
+
+
+//    public static String regexStartDay(String regex,){
+//
+//    }
 }

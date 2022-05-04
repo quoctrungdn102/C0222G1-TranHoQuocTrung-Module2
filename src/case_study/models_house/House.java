@@ -4,8 +4,21 @@ public class House extends Facility {
     private String roomStandard;
     private int floor;
 
-    public House(String id, String nameService, double area, double price, int peopleMax, String rentalType, String roomStandard, int floor) {
+    public House(String id,
+                 String nameService,
+                 double area,
+                 double price,
+                 int peopleMax, String rentalType, String roomStandard, int floor) {
         super(id, nameService, area, price, peopleMax, rentalType);
+        this.roomStandard = roomStandard;
+        this.floor = floor;
+    }
+
+    public House() {
+
+    }
+
+    public House(String roomStandard, int floor) {
         this.roomStandard = roomStandard;
         this.floor = floor;
     }
@@ -32,5 +45,10 @@ public class House extends Facility {
                 "roomStandard='" + roomStandard + '\'' +
                 ", floor=" + floor +
                 '}';
+    }
+
+    @Override
+    public String getValue() {
+        return "house"+","+ super.getValue()+","+this.getRoomStandard()+","+this.getFloor();
     }
 }

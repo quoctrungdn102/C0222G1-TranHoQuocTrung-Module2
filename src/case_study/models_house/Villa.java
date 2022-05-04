@@ -20,6 +20,16 @@ public class Villa extends Facility{
         this.floor = floor;
     }
 
+    public Villa() {
+
+    }
+
+    public Villa(String roomStandard, double areaPool, int floor) {
+        this.roomStandard = roomStandard;
+        this.areaPool = areaPool;
+        this.floor = floor;
+    }
+
     public String getRoomStandard() {
         return roomStandard;
     }
@@ -47,9 +57,20 @@ public class Villa extends Facility{
     @Override
     public String toString() {
         return "Villa{" + super.toString()+
-                "roomStandard='" + roomStandard + '\'' +
+                ",roomStandard =" + roomStandard+
                 ", areaPool=" + areaPool +
-                ", floor=" + floor +
+                ", floor = " + floor +
                 '}';
     }
+
+    @Override
+    public String getValue() {
+        return "vila"+","+super.getValue()+","+this.getRoomStandard()+","+this.getAreaPool()+","+this.getFloor();
+    }
+
+//    public String value(){
+//        return this.getId()+","+this.getNameService()+","+this.getArea()+","+
+//                this.getPrice()+","+this.getPeopleMax()+","+this.getRentalType()+","+
+//                this.getRoomStandard()+","+this.getAreaPool()+","+this.getFloor();
+//    }
 }

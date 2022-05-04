@@ -3,6 +3,10 @@ package case_study.models_house;
 public class Room extends Facility {
 private String serviceFree;
 
+    public Room() {
+
+    }
+
     public String getServiceFree() {
         return serviceFree;
     }
@@ -22,4 +26,10 @@ private String serviceFree;
                 "serviceFree='" + serviceFree + '\'' +
                 '}';
     }
+
+    @Override
+    public String getValue() {
+        return "room"+","+ super.getValue()+","+this.getServiceFree();
+    }
+
 }

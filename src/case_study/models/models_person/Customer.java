@@ -44,4 +44,9 @@ public class Customer extends Person {
                 ", address='" + address + '\'' +
                 '}';
     }
+    public String value(){
+        return this.getId()+","+this.getName()+","+this.getDateOfBirth()+","+this.getGender()+","+
+                this.getPassport()+","+this.getPhoneNumber()+","+this.getEmail()+","+this.getCustomerType()+","+
+                this.getAddress();
+    }
 }

@@ -76,13 +76,17 @@ public abstract class  Facility {
     @Override
     public String toString() {
         return
-                "id=" + id +
-                ", nameService='" + nameService + '\'' +
-                ", area='" + area + '\'' +
-                ", price=" + price +
-                ", peopleMax=" + peopleMax +
-                ", rentalType='" + rentalType + '\''
+                "id = " + id +
+                ", nameService = " + nameService +
+                ", area = " + area + '\'' +
+                ", price = " + price +
+                ", peopleMax = " + peopleMax +
+                ", rentalType = " + rentalType
                 ;
+    }
+    public String getValue(){
+        return this.getId()+","+this.getNameService()+","+this.getArea()+","+
+                this.getPrice()+","+this.getPeopleMax()+","+this.getRentalType();
     }
 }
 
