@@ -22,7 +22,8 @@ public class BookingServiceImpl implements BookingService {
     Facility facility;
     int index;
     Customer customer;
-    public static final String REGEX_AGE = "^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
+    public static final String REGEX_AGE = "^(0?[1-9]{2}|[12][0-9]|3[01])[\\/\\-](0?[1-9]{2}|1[012])[\\/\\-]\\d{4}$";
+
     public static final String REGEX_ID_FACILITY = "^(SVRO|SVHO|SVVL)(-)[0-9]{4}$";
 
     public BookingServiceImpl() {
@@ -120,10 +121,18 @@ Set<Booking> set ;
 
                     System.out.println("nhap id boking ");
                     int idBooking = Integer.parseInt(scanner.nextLine());
-                    System.out.println("nhap star day  ");
-                    String starDay = RegexData.regexData(REGEX_AGE, scanner.nextLine(), "sai dinh dang dd/MM/yyyy");
-                    System.out.println("nhap end day  ");
-                    String endDay = RegexData.regexData(REGEX_AGE, scanner.nextLine(), "sai dinh dang dd/MM/yyyy");
+                    String starDay="";
+                    String endDay="";
+                    try {
+                        System.out.println("nhap star day  ");
+                        starDay = RegexData.regexData(REGEX_AGE, scanner.nextLine(), "sai dinh dang dd/MM/yyyy");
+                        System.out.println("nhap end day  ");
+                         endDay = RegexData.regexData(REGEX_AGE, scanner.nextLine(), "sai dinh dang dd/MM/yyyy");
+                    }catch (Exception e){
+                        System.out.println("sai dinh dang ");
+
+                    }
+
                     List<String> listString = new ArrayList<>();
                     listString.add(idBooking + "," + starDay + "," + endDay + "," + list.get(index).value() + "," + facility.getValue());
                     readAndWriteFile.writeFile("case_study\\file\\booking.csv", listString);
