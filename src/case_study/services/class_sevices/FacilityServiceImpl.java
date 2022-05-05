@@ -27,12 +27,8 @@ public class FacilityServiceImpl implements FacilityService {
     public static final String REGEX_PRICE = "^[1-9]|\\d{1,}$";
     public static final String REGEX_PEOPLE = "^[1-9]|(1)\\d$";
     public static final String REGEX_FLOOR = "^[1-9]|[1-9]\\d$";
-
-
-    List<String[]> listArrString;
-    Map<Facility, Integer> map = new HashMap<>();
     Scanner scanner = new Scanner(System.in);
-    List<String> listString = new ArrayList<>();
+
     ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
     Villa villa;
     House house;
@@ -42,6 +38,7 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void displayFacility() {
+        Map<Facility, Integer> map;
         map = returnMap();
         for (Map.Entry<Facility, Integer> temp : map.entrySet()) {
             System.out.println(temp.getKey().toString() + "so lan thue" + temp.getValue());
@@ -49,13 +46,13 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
     public  Map<Facility,Integer> returnMap() {
-        listArrString = new ArrayList<>();
-        listArrString = readAndWriteFile.readFile("case_study\\file\\facility.csv");
+        Map<Facility, Integer> map = new LinkedHashMap<>();
+        List<String[]> listArrString = readAndWriteFile.readFile("case_study\\file\\facility.csv");
         for (String[] arr : listArrString) {
             if (arr[0].equals("vila")) {
                 villa = new Villa(arr[1], arr[2], Double.parseDouble(arr[3]), Double.parseDouble(arr[4]),
                         Integer.parseInt(arr[5]), arr[6], arr[7], Double.parseDouble(arr[8]), Integer.parseInt(arr[9]));
-                map.put(villa, value = Integer.parseInt(arr[10]));
+                map.put(villa,Integer.parseInt(arr[10]));
             } else if (arr[0].equals("house")) {
                 house = new House(arr[1], arr[2], Double.parseDouble(arr[3]), Double.parseDouble(arr[4]),
                         Integer.parseInt(arr[5]), arr[6], arr[7], Integer.parseInt(arr[8]));
@@ -65,63 +62,6 @@ public class FacilityServiceImpl implements FacilityService {
                         Integer.parseInt(arr[5]), arr[6], arr[7]);
                 map.put(room, Integer.parseInt(arr[8]));
             }
-        }
-        return map;
-    }
-
-    public void readFileVila() {
-        returnMapVila();
-        for (Map.Entry<Facility, Integer> temp : map.entrySet()) {
-            System.out.println(temp.getKey().toString() + "so lan thue" + temp.getValue());
-        }
-    }
-
-    public Map<Facility, Integer> returnMapVila() {
-        map = new HashMap<>();
-        listArrString = new ArrayList<>();
-        listArrString = readAndWriteFile.readFile("case_study\\file\\vila.csv");
-        for (String[] arr : listArrString) {
-            villa = new Villa(arr[1], arr[2], Double.parseDouble(arr[3]), Double.parseDouble(arr[4]),
-                    Integer.parseInt(arr[5]), arr[6], arr[7], Double.parseDouble(arr[8]), Integer.parseInt(arr[9]));
-            map.put(villa, Integer.parseInt(arr[10]));
-        }
-        return map;
-    }
-
-    public void readFileRoom() {
-        returnMapRoom();
-        for (Map.Entry<Facility, Integer> temp : map.entrySet()) {
-            System.out.println(temp.getKey().toString() + "so lan thue" + temp.getValue());
-        }
-    }
-
-    public Map<Facility, Integer> returnMapRoom() {
-        map = new HashMap<>();
-        listArrString = new ArrayList<>();
-        listArrString = readAndWriteFile.readFile("case_study\\file\\room.csv");
-        for (String[] arr : listArrString) {
-            room = new Room(arr[1], arr[2], Double.parseDouble(arr[3]), Double.parseDouble(arr[4]),
-                    Integer.parseInt(arr[5]), arr[6], arr[7]);
-            map.put(room, Integer.parseInt(arr[8]));
-        }
-        return map;
-    }
-
-    public void readFileHouse() {
-        returnMapHouse();
-        for (Map.Entry<Facility, Integer> temp : map.entrySet()) {
-            System.out.println(temp.getKey().toString() + "so lan thue" + temp.getValue());
-        }
-    }
-
-    public Map<Facility, Integer> returnMapHouse() {
-        map = new HashMap<>();
-        listArrString = new ArrayList<>();
-        listArrString = readAndWriteFile.readFile("case_study\\file\\house.csv");
-        for (String[] arr : listArrString) {
-            house = new House(arr[1], arr[2], Double.parseDouble(arr[3]), Double.parseDouble(arr[4]),
-                    Integer.parseInt(arr[5]), arr[6], arr[7], Integer.parseInt(arr[8]));
-            map.put(house, Integer.parseInt(arr[9]));
         }
         return map;
     }
@@ -149,7 +89,7 @@ public class FacilityServiceImpl implements FacilityService {
         System.out.println("nhap so so tang ");
         int floor = Integer.parseInt(RegexData.regexData(REGEX_FLOOR, scanner.nextLine(), "0 < floor is num < 99"));
         value = 0;
-
+        List<String> listString = new ArrayList<>();
         listString.add("vila" + "," + id + "," + name + "," + area + "," + price + "," + people + "," + rental + "," + room + "," + areaPool + "," + floor
                 + "," + value);
         readAndWriteFile.writeFile("case_study\\file\\facility.csv", listString);
@@ -174,7 +114,7 @@ public class FacilityServiceImpl implements FacilityService {
         System.out.println("service free");
         String service = (scanner.nextLine());
 
-
+        List<String> listString = new ArrayList<>();
         Facility room = new Room(id, name, area, price, people, rental, service);
         int value = 0;
         listString.add("room" + "," + id + "," + name + "," + area + "," + price + "," + people + "," + rental + "," + service + "," +
@@ -204,6 +144,7 @@ public class FacilityServiceImpl implements FacilityService {
 
         Facility house = new House(id, name, area, price, people, rental, room, floor);
 
+        List<String> listString = new ArrayList<>();
         int value = 0;
         listString.add("house" + "," + id + "," + name + "," + area + "," + price + "," + people + "," + rental + "," + room
                 + "," + floor +
@@ -214,7 +155,14 @@ public class FacilityServiceImpl implements FacilityService {
 
     @Override
     public void maintenanceList() {
-
+        Map<Facility, Integer> map = new LinkedHashMap<>();
+        map = returnMap();
+        System.out.println("danh sách đang bảo trì ");
+        for (Map.Entry<Facility,Integer> temp: map.entrySet()) {
+            if (temp.getValue()==5){
+                System.out.println(temp.getKey().toString()+"so lan su dung " + temp.getValue());
+            }
+        }
 
     }
 

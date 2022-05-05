@@ -11,23 +11,22 @@ import java.util.List;
 import java.util.Map;
 
 public class ReadAndWriteFile {
-    public void writeFile(String path, List<String>  list) {
+    public void writeFile(String path, List<String> list) {
         try {
-            FileWriter fileWriter = new FileWriter(path,true);
+            FileWriter fileWriter = new FileWriter(path, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (String arr: list) {
+            for (String arr : list) {
                 bufferedWriter.write(arr);
                 bufferedWriter.newLine();
             }
-
-                bufferedWriter.close();
-                fileWriter.close();
-            } catch (IOException ioException) {
+            bufferedWriter.close();
+            fileWriter.close();
+        } catch (IOException ioException) {
             ioException.printStackTrace();
         }
 
 
-        }
+    }
 
 
     public List<String[]> readFile(String path) {
@@ -37,7 +36,7 @@ public class ReadAndWriteFile {
             String line = "";
             List<String[]> list = new ArrayList<>();
             while ((line = bufferedReader.readLine()) != null && !line.equals("")) {
-           String[] str = line.split(",");
+                String[] str = line.split(",");
                 list.add(str);
             }
             bufferedReader.close();
@@ -48,22 +47,9 @@ public class ReadAndWriteFile {
         }
         return null;
     }
-//    public void writeFile1(String path, Map<Facility,Integer> list) {
-//        try {
-//            FileWriter fileWriter = new FileWriter(path,true);
-//            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-//            for (Map.Entry<Facility,Integer> arr : list.entrySet()) {
-//                bufferedWriter.write(arr.toString());
-//                bufferedWriter.newLine();
-//            }
-//            bufferedWriter.close();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//
 //        }
 
 
-    }
+}
 
 
